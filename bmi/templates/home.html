@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}BMI Calculator{% endblock title%}
+    
+{% block main %}
+
+   <!-- <div class="container-fluid">
+        <img src="{% static 'images/main_img.jpg' %}" class="img-fluid" height="290px" alt="" srcset="">
+    </div>
+    <div class="container">
+       
+    </div>
+
+    <br>-->
+    <div class="container">
+        <br>
+        <h3 style="text-align: center;">Bmi Calculator using Python and Django Web-framework</h3><br>
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <p>  <img src="{% static 'images/bmi_chart.jpg' %}" class="img-fluid" alt="bmi_chart" widht="100px"srcset=""></p>
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_table}}
+                    <br>
+                    <button type="submit" class="btn btn-primary">Calculate my BMI</button>
+                </form>
+                <br>
+                {% if bmi %} 
+                    <h5>Hi {{ name }} {{ ans }} <br>your <b>BMI INDEX </b> is <b style="color: red;"> {{ bmi }} </b></h5>
+                {% endif %}
+            </div>
+        </div>
+        <p style="padding-top: 15%; text-align: center;"> Made with <img src="{% static 'images/heart.png' %}" alt="heart" width="25px" height="25px"> by Rohit Chaudhary</p>
+    </div>
+   
+    <br>
+
+    {% endblock main %}
